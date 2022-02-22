@@ -2,45 +2,22 @@
 #'
 #'Return metadata about the current TNRS sources
 #' @return Dataframe containing information about the sources used in the current TNRS version.
-#' @import RCurl
-#' @importFrom jsonlite toJSON fromJSON 
+#' @param ... Additional parameters passed to internal functions
 #' @export
 #' @examples {
 #' sources <- TNRS_sources()
 #' }
 #' 
-TNRS_sources <- function(){
-  
-  # URL for TNRS API
-  #url = "https://tnrsapidev.xyz/tnrs_api.php"
-  #url = "http://vegbiendev.nceas.ucsb.edu:8975/tnrs_api.php" #dev
-  url = "https://tnrsapi.xyz/tnrs_api.php" #production
-  
-  # Set sources mode
-  mode <- "sources"		
-  
-  # Construct the request
-  headers <- list('Accept' = 'application/json', 'Content-Type' = 'application/json', 'charset' = 'UTF-8')
+TNRS_sources <- function(...){
   
   
-  # Re-form the options json again
-  opts <- data.frame(c(mode))
-  names(opts) <- c("mode")
-  opts_json <- jsonlite::toJSON(opts)
-  opts_json <- gsub('\\[','',opts_json)
-  opts_json <- gsub('\\]','',opts_json)
+  # Check for internet access
+  if (!check_internet()) {
+    message("This function requires internet access, please check your connection.")
+    return(invisible(NULL))
+  }  
   
-  # Make the options
-  input_json <- paste0('{"opts":', opts_json, '}' )
-  
-  # Construct the request
-  headers <- list('Accept' = 'application/json', 'Content-Type' = 'application/json', 'charset' = 'UTF-8')
-  
-  # Send the request
-  results_json <- postForm(url, .opts=list(postfields= input_json, httpheader=headers))
-  
-  # Display the results
-  results <- jsonlite::fromJSON(results_json)
+  results <- TNRS_core(mode = "sources", ...)
   return(results)
   
 }#TNRS sources
