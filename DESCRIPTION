@@ -1,6 +1,6 @@
 Package: TNRS
 Title: Taxonomic Name Resolution Service
-Version: 0.3.0
+Version: 0.3.1
 Authors@R: 
     c(
             person("Brian", "Maitner", email = "bmaitner@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-2118-9880")),
@@ -15,12 +15,12 @@ Imports: jsonlite, httr
 Suggests: knitr, rmarkdown, testthat, vcr (>= 0.6.0), devtools
 VignetteBuilder: knitr
 RoxygenNote: 7.1.2
-Depends: R (>= 2.10)
+Depends: R (>= 3.5.0)
 NeedsCompilation: no
-Packaged: 2022-02-21 17:05:22 UTC; Brian
+Packaged: 2022-06-22 00:01:33 UTC; Brian Maitner
 Author: Brian Maitner [aut, cre] (<https://orcid.org/0000-0002-2118-9880>),
   Brad Boyle [aut],
   Paul Efren [ctb]
 Maintainer: Brian Maitner <bmaitner@gmail.com>
 Repository: CRAN
-Date/Publication: 2022-02-22 09:20:24 UTC
+Date/Publication: 2022-06-22 06:30:05 UTC

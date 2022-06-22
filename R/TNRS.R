@@ -10,6 +10,8 @@
 #' @param ... Additional parameters passed to internal functions
 #' @return Dataframe containing TNRS results.
 #' @note usda = United States Department of Agriculture, wfo = World Flora Online, wcvp = World Checklist of Vascular Plants.
+#' @note For queries of more than 5000 names, the function will automatically divide the query into batches of 5000 names and then run the batches one after the other. Thus, for very large queries this may take some time. When this is the case, a progress bar will be displayed.
+#' @importFrom utils setTxtProgressBar txtProgressBar
 #' @export
 #' @examples \dontrun{
 #' #Take a subset of the testfile to speed up runtime                  
@@ -37,14 +39,14 @@ TNRS <- function(taxonomic_names,
   }  
   
   #If taxonomic names are supplied as a character string, make them into a data.frame
-  
-  if(class(taxonomic_names) == "character"){
+
+  if(inherits(x = taxonomic_names,what = "character")){
     taxonomic_names <- as.data.frame(cbind(1:length(taxonomic_names),taxonomic_names))
   }
   
   
   #Specify the limit of names for the TNRS
-  name_limit <- 1000
+  name_limit <- 5000
   
   #Check that accuracy makes sense
   
@@ -98,13 +100,23 @@ TNRS <- function(taxonomic_names,
   
   
   
-  if(nrow(taxonomic_names)>name_limit){
+  if(nrow(taxonomic_names) > name_limit){
   
     nchunks <- ceiling(nrow(taxonomic_names)/name_limit)  
+
+    #set up progress bar
+    pb <- txtProgressBar(min = 0,      # Minimum value of the progress bar
+                         max = nchunks, # Maximum value of the progress bar
+                         style = 3,    # Progress bar style (also available style = 1 and style = 2)
+                         #width = 50,   # Progress bar width. Defaults to getOption("width")
+                         char = "=")   # Character used to create the bar
     
     
     for(i in 1:nchunks){
     
+      
+      
+      
       #Use the first batch of results to set up the output file
       if(i==1){
             results <- TNRS_base(taxonomic_names = taxonomic_names[(((i-1)*name_limit)+1):(i*name_limit),],
@@ -161,6 +173,10 @@ TNRS <- function(taxonomic_names,
       
       }#middle bits  
       
+      setTxtProgressBar(pb, i)
+      
+      
+      
     }#i loop
     
     
@@ -170,7 +186,7 @@ TNRS <- function(taxonomic_names,
   }#if more than 10k
     
   
-  
+  close(pb)
   return(results)
   
 }#fx

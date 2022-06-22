@@ -12,7 +12,7 @@
 
 <meta name="author" content="Brian Maitner" />
 
-<meta name="date" content="2022-02-21" />
+<meta name="date" content="2022-06-21" />
 
 <title>Taxonomic Names Resolution Service</title>
 
@@ -26,6 +26,7 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
+
 
 
 <style type="text/css">
@@ -141,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <h1 class="title toc-ignore">Taxonomic Names Resolution Service</h1>
 <h4 class="author">Brian Maitner</h4>
-<h4 class="date">2022-02-21</h4>
+<h4 class="date">2022-06-21</h4>
 
 
 
@@ -183,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##                                                                                      taxon
 ## 1                                                                       Arecaceae Mauritia
 ## 2                                                        Solanaceae Solanum bipatens Dunal
-## 3                     HYPOPTERYGIACEAE Hypopterygium incrassatolimbatum Ma^sA‰A¬Aºll. Hal.
+## 3                        HYPOPTERYGIACEAE Hypopterygium incrassatolimbatum Ma^sAAAll. Hal.
 ## 4                                                     Helotiaceae Diplothrix juniperifolia
 ## 5                                                      Arecaceae Leopoldinia pulchra Mart.
 ## 6                                                        Melastomataceae Leandra schenckii
@@ -211,21 +212,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the results</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(results, <span class="dv">10</span>)</span></code></pre></div>
-<pre><code>##    ID                                                       Name_submitted
-## 1   1                                                   Arecaceae Mauritia
-## 2   2                                    Solanaceae Solanum bipatens Dunal
-## 3   3 HYPOPTERYGIACEAE Hypopterygium incrassatolimbatum Ma^sA‰A¬Aºll. Hal.
-## 4   4                                 Helotiaceae Diplothrix juniperifolia
-## 5   5                                  Arecaceae Leopoldinia pulchra Mart.
-## 6   6                                    Melastomataceae Leandra schenckii
-## 7   7                                               Hydnocarpus macrocarpa
-## 8   8  Campyliaceae Warnstorfia trichophylla (Warnst. ) Tuom. &amp; T. J. Kop.
-## 9   9                                                 Piper arboreum Aubl.
-## 10 10                      Poaceae Pseudochaetochloa australiensis Hitchc.
+<pre><code>##    ID                                                      Name_submitted
+## 1   1                                                  Arecaceae Mauritia
+## 2   2                                   Solanaceae Solanum bipatens Dunal
+## 3   3   HYPOPTERYGIACEAE Hypopterygium incrassatolimbatum Ma^sAAAll. Hal.
+## 4   4                                Helotiaceae Diplothrix juniperifolia
+## 5   5                                 Arecaceae Leopoldinia pulchra Mart.
+## 6   6                                   Melastomataceae Leandra schenckii
+## 7   7                                              Hydnocarpus macrocarpa
+## 8   8 Campyliaceae Warnstorfia trichophylla (Warnst. ) Tuom. &amp; T. J. Kop.
+## 9   9                                                Piper arboreum Aubl.
+## 10 10                     Poaceae Pseudochaetochloa australiensis Hitchc.
 ##       Overall_score Name_matched_id                     Name_matched
 ## 1                 1          661203                         Mauritia
 ## 2                 1          511246                 Solanum bipatens
-## 3            0.9201          567645 Hypopterygium incrassatolimbatum
+## 3            0.9327          567645 Hypopterygium incrassatolimbatum
 ## 4  0.59957384396743           55495         Diplothrix juniperifolia
 ## 5                 1           37339              Leopoldinia pulchra
 ## 6                 1          305636                Leandra schenckii
@@ -236,7 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##          Name_score Name_matched_rank              Author_submitted
 ## 1                 1             genus                              
 ## 2                 1           species                         Dunal
-## 3                 1           species            Ma^sA‰A¬Aºll. Hal.
+## 3                 1           species               Ma^sAAAll. Hal.
 ## 4  0.59957384396743           species                              
 ## 5                 1           species                         Mart.
 ## 6                 1           species                              
@@ -247,7 +248,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##                 Author_matched Author_score            Canonical_author
 ## 1                                                                 L. f.
 ## 2                        Dunal            1                       Dunal
-## 3                  MÃ¼ll. Hal.       0.6005                 MÃ¼ll. Hal.
+## 3                  MÃ¼ll. Hal.       0.6635                 MÃ¼ll. Hal.
 ## 4                                                                   DC.
 ## 5                        Mart.            1                       Mart.
 ## 6                                                                 Cogn.
