@@ -4,9 +4,11 @@
 \alias{TNRS_version}
 \title{Get metadata on current TNRS version}
 \usage{
-TNRS_version(...)
+TNRS_version(skip_internet_check = FALSE, ...)
 }
 \arguments{
+\item{skip_internet_check}{Should the check for internet connectivity be skipped? Default is FALSE.}
+
 \item{...}{Additional parameters passed to internal functions}
 }
 \value{
@@ -17,7 +19,7 @@ Return metadata about the current TNRS version
 }
 \examples{
 {
-TNRS_version_metadata <- TNRS_version()
+  TNRS_version_metadata <- TNRS_version()
 }
 
 }
