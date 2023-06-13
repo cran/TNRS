@@ -12,7 +12,7 @@
 
 <meta name="author" content="Brian Maitner" />
 
-<meta name="date" content="2023-01-10" />
+<meta name="date" content="2023-06-12" />
 
 <title>Taxonomic Names Resolution Service</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Taxonomic Names Resolution Service</h1>
 <h4 class="author">Brian Maitner</h4>
-<h4 class="date">2023-01-10</h4>
+<h4 class="date">2023-06-12</h4>
 
 
 
@@ -430,38 +430,38 @@ data.frame containing two columns: row number and scientific name.</p>
 ## 9   9                                                Piper arboreum Aubl.
 ## 10 10                     Poaceae Pseudochaetochloa australiensis Hitchc.
 ##    Overall_score Name_matched_id                     Name_matched Name_score
-## 1      1.0000000          661203                         Mauritia  1.0000000
+## 1      1.0000000         2055786                         Mauritia  1.0000000
 ## 2      1.0000000          511246                 Solanum bipatens  1.0000000
-## 3      0.9327000          567645 Hypopterygium incrassatolimbatum  1.0000000
+## 3      0.9302800         1987123 Hypopterygium incrassatolimbatum  1.0000000
 ## 4      0.5995738           55495         Diplothrix juniperifolia  0.5995738
 ## 5      1.0000000           37339              Leopoldinia pulchra  1.0000000
 ## 6      1.0000000          305636                Leandra schenckii  1.0000000
 ## 7      1.0000000         1284252           Hydnocarpus macrocarpa  1.0000000
-## 8      0.6796591          540070         Warnstorfia trichophylla  0.5995738
+## 8      0.6796591         1979460         Warnstorfia trichophylla  0.5995738
 ## 9      1.0000000          363781                   Piper arboreum  1.0000000
 ## 10     1.0000000          387804  Pseudochaetochloa australiensis  1.0000000
-##    Name_matched_rank              Author_submitted              Author_matched
-## 1              genus                                                          
-## 2            species                         Dunal                       Dunal
-## 3            species               Ma^sAAAll. Hal.                 MÃ¼ll. Hal.
-## 4            species                                                          
-## 5            species                         Mart.                       Mart.
-## 6            species                                                          
-## 7            species                                                          
-## 8            species (Warnst. ) Tuom. &amp; T. J. Kop. (Warnst.) Tuom. &amp; T.J. Kop.
-## 9            species                         Aubl.                       Aubl.
-## 10           species                       Hitchc.                     Hitchc.
-##    Author_score            Canonical_author Name_matched_accepted_family
-## 1            NA                       L. f.                    Arecaceae
-## 2        1.0000                       Dunal                   Solanaceae
-## 3        0.6635                 MÃ¼ll. Hal.             Hypopterygiaceae
-## 4            NA                         DC.                   Asteraceae
-## 5        1.0000                       Mart.                    Arecaceae
-## 6            NA                       Cogn.              Melastomataceae
-## 7            NA                       Warb.                  Achariaceae
-## 8        1.0000 (Warnst.) Tuom. &amp; T.J. Kop.              Amblystegiaceae
-## 9        1.0000                       Aubl.                   Piperaceae
-## 10       1.0000                     Hitchc.                      Poaceae
+##    Name_matched_rank              Author_submitted             Author_matched
+## 1              genus                                                         
+## 2            species                         Dunal                      Dunal
+## 3            species               Ma^sAAAll. Hal.                  Müll.Hal.
+## 4            species                                                         
+## 5            species                         Mart.                      Mart.
+## 6            species                                                         
+## 7            species                                                         
+## 8            species (Warnst. ) Tuom. &amp; T. J. Kop. (Warnst.) Tuom. &amp; T.J.Kop.
+## 9            species                         Aubl.                      Aubl.
+## 10           species                       Hitchc.                    Hitchc.
+##    Author_score           Canonical_author Name_matched_accepted_family
+## 1            NA                       L.f.                    Arecaceae
+## 2        1.0000                      Dunal                   Solanaceae
+## 3        0.6514                  Müll.Hal.             Hypopterygiaceae
+## 4            NA                        DC.                   Asteraceae
+## 5        1.0000                      Mart.                    Arecaceae
+## 6            NA                      Cogn.              Melastomataceae
+## 7            NA                      Warb.                  Achariaceae
+## 8        1.0000 (Warnst.) Tuom. &amp; T.J.Kop.              Calliergonaceae
+## 9        1.0000                      Aubl.                   Piperaceae
+## 10       1.0000                    Hitchc.                      Poaceae
 ##      Genus_submitted     Genus_matched Genus_score Specific_epithet_submitted
 ## 1           Mauritia          Mauritia           1                           
 ## 2            Solanum           Solanum           1                   bipatens
@@ -528,72 +528,61 @@ data.frame containing two columns: row number and scientific name.</p>
 ## 8                             NA                Campyliaceae
 ## 9                             NA                            
 ## 10                            NA                            
-##                               Name_matched_url Name_matched_lsid Phonetic
-## 1        http://www.tropicos.org/Name/40015082                          Y
-## 2  https://wcvp.science.kew.org/taxon/818455-1                          Y
-## 3        http://www.tropicos.org/Name/35129557                          Y
-## 4         http://www.tropicos.org/Name/2705463                          Y
-## 5         http://www.tropicos.org/Name/2400575                          Y
-## 6        http://www.tropicos.org/Name/20300803                          Y
-## 7       http://www.tropicos.org/Name/100431320                          Y
-## 8        http://www.tropicos.org/Name/35100291                          Y
-## 9        http://www.tropicos.org/Name/25002004                          Y
-## 10       http://www.tropicos.org/Name/25520644                          Y
-##    Taxonomic_status                   Accepted_name
-## 1          Accepted                        Mauritia
-## 2           Synonym             Solanum cordifolium
-## 3           Synonym         Hypopterygium tamarisci
-## 4           Synonym            Zinnia juniperifolia
-## 5          Accepted             Leopoldinia pulchra
-## 6        No opinion                                
-## 7          Accepted          Hydnocarpus macrocarpa
-## 8           Synonym      Sarmentypnum trichophyllum
-## 9          Accepted                  Piper arboreum
-## 10         Accepted Pseudochaetochloa australiensis
-##                   Accepted_species       Accepted_name_author Accepted_name_id
-## 1                                                       L. f.           661203
-## 2              Solanum cordifolium                      Dunal           511341
-## 3          Hypopterygium tamarisci (Sw.) Brid. ex MÃ¼ll. Hal.           567757
-## 4             Zinnia juniperifolia              (DC.) A. Gray            91439
-## 5              Leopoldinia pulchra                      Mart.            37339
-## 6                                                                             
-## 7           Hydnocarpus macrocarpa                      Warb.          1284252
-## 8       Sarmentypnum trichophyllum         (Warnst.) HedenÃ¤s           644908
-## 9                   Piper arboreum                      Aubl.           363781
-## 10 Pseudochaetochloa australiensis                    Hitchc.           387804
-##    Accepted_name_rank                           Accepted_name_url
-## 1               genus       http://www.tropicos.org/Name/40015082
-## 2             species https://wcvp.science.kew.org/taxon/818796-1
-## 3             species       http://www.tropicos.org/Name/35129670
-## 4             species        http://www.tropicos.org/Name/2743155
-## 5             species        http://www.tropicos.org/Name/2400575
-## 6                                                                
-## 7             species      http://www.tropicos.org/Name/100431320
-## 8             species       http://www.tropicos.org/Name/35216910
-## 9             species       http://www.tropicos.org/Name/25002004
-## 10            species       http://www.tropicos.org/Name/25520644
-##    Accepted_name_lsid  Accepted_family Overall_score_order
-## 1                            Arecaceae                   1
-## 2                           Solanaceae                   1
-## 3                     Hypopterygiaceae                   1
-## 4                           Asteraceae                   1
-## 5                            Arecaceae                   1
-## 6                                                        1
-## 7                          Achariaceae                   1
-## 8                      Amblystegiaceae                   1
-## 9                           Piperaceae                   1
-## 10                             Poaceae                   1
-##    Highertaxa_score_order   Source Warnings
-## 1                       1 tropicos        0
-## 2                       1     wcvp        0
-## 3                       1 tropicos        0
-## 4                       6 tropicos        4
-## 5                       1 tropicos        0
-## 6                       1 tropicos        0
-## 7                       1 tropicos        0
-## 8                       3 tropicos        4
-## 9                       1 tropicos        0
-## 10                      1 tropicos        0</code></pre>
+##                                        Name_matched_url Name_matched_lsid
+## 1            https://wcvp.science.kew.org/taxon/31356-1                  
+## 2           https://wcvp.science.kew.org/taxon/818455-1                  
+## 3  http://www.worldfloraonline.org/taxon/wfo-0001162747                  
+## 4           https://wcvp.science.kew.org/taxon/201833-1                  
+## 5           https://wcvp.science.kew.org/taxon/667794-1                  
+## 6  http://www.worldfloraonline.org/taxon/wfo-0001079398                  
+## 7  http://www.worldfloraonline.org/taxon/wfo-0000926452                  
+## 8  http://www.worldfloraonline.org/taxon/wfo-0001146720                  
+## 9           https://wcvp.science.kew.org/taxon/680435-1                  
+## 10          https://wcvp.science.kew.org/taxon/418837-1                  
+##    Phonetic Taxonomic_status            Accepted_name         Accepted_species
+## 1         Y         Accepted                 Mauritia                         
+## 2         Y          Synonym      Solanum cordifolium      Solanum cordifolium
+## 3         Y          Synonym  Hypopterygium tamarisci  Hypopterygium tamarisci
+## 4         Y          Synonym     Zinnia juniperifolia     Zinnia juniperifolia
+## 5         Y         Accepted      Leopoldinia pulchra      Leopoldinia pulchra
+## 6         Y          Synonym        Leandra regnellii        Leandra regnellii
+## 7         Y       No opinion                                                  
+## 8         Y         Accepted Warnstorfia trichophylla Warnstorfia trichophylla
+## 9         Y         Accepted           Piper arboreum           Piper arboreum
+## 10        Y          Synonym      Cenchrus arnhemicus      Cenchrus arnhemicus
+##          Accepted_name_author Accepted_name_id Accepted_name_rank
+## 1                        L.f.          2055786              genus
+## 2                       Dunal           511341            species
+## 3    (Sw.) Brid. ex Müll.Hal.          1987155            species
+## 4                      A.Gray          2149182            species
+## 5                       Mart.            37339            species
+## 6              (Triana) Cogn.           305626            species
+## 7                                                                
+## 8  (Warnst.) Tuom. &amp; T.J.Kop.          1979460            species
+## 9                       Aubl.           363781            species
+## 10         (F.Muell.) Morrone          1874178            species
+##                                       Accepted_name_url Accepted_name_lsid
+## 1            https://wcvp.science.kew.org/taxon/31356-1                   
+## 2           https://wcvp.science.kew.org/taxon/818796-1                   
+## 3  http://www.worldfloraonline.org/taxon/wfo-0001162816                   
+## 4           https://wcvp.science.kew.org/taxon/261346-1                   
+## 5           https://wcvp.science.kew.org/taxon/667794-1                   
+## 6  http://www.worldfloraonline.org/taxon/wfo-0001079388                   
+## 7                                                                         
+## 8  http://www.worldfloraonline.org/taxon/wfo-0001146720                   
+## 9           https://wcvp.science.kew.org/taxon/680435-1                   
+## 10        https://wcvp.science.kew.org/taxon/77105982-1                   
+##     Accepted_family Overall_score_order Highertaxa_score_order Source Warnings
+## 1         Arecaceae                   1                      1   wcvp        0
+## 2        Solanaceae                   1                      1   wcvp        0
+## 3  Hypopterygiaceae                   1                      1    wfo        0
+## 4        Asteraceae                   1                      1   wcvp        0
+## 5         Arecaceae                   1                      1   wcvp        0
+## 6   Melastomataceae                   1                      1    wfo        0
+## 7                                     1                      1    wfo        0
+## 8   Calliergonaceae                   1                      1    wfo        0
+## 9        Piperaceae                   1                      1   wcvp        0
+## 10          Poaceae                   1                      1   wcvp        0</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The output includes information on the name submitted, the match score (how close the match is), the name matched, the status of the matched name, and the accepted name.</span></span></code></pre></div>
 </div>
 <div id="tnrs-metadata" class="section level1">

@@ -32,7 +32,6 @@ head(results, 10)
 # coincidente, el estado del nombre coincidente y el nombre aceptado.
 
 ## -----------------------------------------------------------------------------
-
 metadata <- TNRS_metadata()
 
 # Si desea conocer la información de la versión TNRS que utilizas (por

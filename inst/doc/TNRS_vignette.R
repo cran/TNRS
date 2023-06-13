@@ -23,7 +23,6 @@ head(results, 10)
 # The output includes information on the name submitted, the match score (how close the match is), the name matched, the status of the matched name, and the accepted name.
 
 ## -----------------------------------------------------------------------------
-
 metadata <- TNRS_metadata()
 
 # If you want to see the TNRS version information (e.g. to report in an manuscript):
