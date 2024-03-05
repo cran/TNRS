@@ -1,8 +1,8 @@
 #' Resolve plant taxonomic names
 #'
 #' Resolve plant taxonomic names.
-#' @param taxonomic_names Data.frame containing two columns: 1) Row number, 2) Taxonomic names to be resolved (or parsed).  Alternatively, a character vector of names can be supplied.
-#' @param sources Character. Taxonomic sources to use. Default is c("wcvp", "wfo"). Options include "wfo", and "wcvp".
+#' @param taxonomic_names Data.frame containing two columns: 1) Row number, 2) Taxonomic names to be resolved (or parsed). Note that these two columns must be in this order. Alternatively, a character vector of names can be supplied.
+#' @param sources Character. Taxonomic sources to use. Default is c("wcvp", "wfo"). Options include "wfo", "wcvp", and "cact". Use TNRS_sources() for more information.
 #' @param classification Character. Family classification to use. Currently options include "wfo" (the default).
 #' @param mode Character.  Options are "resolve" and "parse". Default option is "resolve"
 #' @param matches Character. Should all matches be returned ("all") or only the best match ("best", the default)?
@@ -10,7 +10,7 @@
 #' @param skip_internet_check Should the check for internet connectivity be skipped? Default is FALSE.
 #' @param ... Additional parameters passed to internal functions
 #' @return Dataframe containing TNRS results.
-#' @note usda = United States Department of Agriculture, wfo = World Flora Online, wcvp = World Checklist of Vascular Plants.
+#' @note wfo = World Flora Online, wcvp = World Checklist of Vascular Plants, cact = Cactaceae at Caryophyllales.org.
 #' @note For queries of more than 5000 names, the function will automatically divide the query into batches of 5000 names and then run the batches one after the other. Thus, for very large queries this may take some time. When this is the case, a progress bar will be displayed.
 #' @note IMPORTANT: Note that parallelization of queries is automatically handled by the API, and so there is no need to further parallelize in R (in fact, doing so may actually slow things down!).
 #' @importFrom utils setTxtProgressBar txtProgressBar
@@ -58,15 +58,15 @@ TNRS <- function(taxonomic_names,
   }
 
   # Check that sources are valid
-  if (!all(sources %in% c("tropicos", "usda", "wfo", "wcvp"))) {
-    message("Invalid source(s) specified. Current options are: tropicos, usda, wfo, wcvp ")
+  if (!all(sources %in% c("wfo", "wcvp", "cact"))) {
+    message("Invalid source(s) specified. Current options are: wfo, wcvp, cact ")
     return(invisible(NULL))
   }
 
 
   # Check that classification is valid
-  if (length(classification) != 1 | !classification %in% c("tropicos", "wfo")) {
-    message("Invalid classification specified. Current options are: tropicos, wfo ")
+  if (length(classification) != 1 | !classification %in% c("wfo")) {
+    message("Invalid classification specified. Current options are: wfo ")
     return(invisible(NULL))
   }
 
@@ -96,7 +96,8 @@ TNRS <- function(taxonomic_names,
       mode = mode,
       matches = matches,
       accuracy = accuracy,
-      skip_internet_check = skip_internet_check
+      skip_internet_check = skip_internet_check,
+      ...
     ))
   } #
 
@@ -127,7 +128,8 @@ TNRS <- function(taxonomic_names,
           mode = mode,
           matches = matches,
           accuracy = accuracy,
-          skip_internet_check = skip_internet_check
+          skip_internet_check = skip_internet_check,
+          ...
         )
 
         # results<-matrix(nrow = nrow(taxonomic_names),ncol = ncol(results_i))
@@ -149,7 +151,8 @@ TNRS <- function(taxonomic_names,
             mode = mode,
             matches = matches,
             accuracy = accuracy,
-            skip_internet_check = skip_internet_check
+            skip_internet_check = skip_internet_check,
+            ...
           )
         )
       } # last batch
@@ -166,7 +169,8 @@ TNRS <- function(taxonomic_names,
             mode = mode,
             matches = matches,
             accuracy = accuracy,
-            skip_internet_check = skip_internet_check
+            skip_internet_check = skip_internet_check,
+            ...
           )
         )
       } # middle bits

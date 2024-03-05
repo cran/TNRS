@@ -22,7 +22,7 @@ TNRS_core(
 
 \item{data_json}{Either NULL (the default) or properly formatted json}
 
-\item{sources}{Character. Taxonomic sources to use. Default is c("wcvp", "wfo"). Options include "wfo", and "wcvp".}
+\item{sources}{Character. Taxonomic sources to use. Default is c("wcvp", "wfo"). Options include "wfo", "wcvp", and "cact".}
 
 \item{classification}{Character. Family classification to use. Currently options include "wfo" (the default).}
 
@@ -31,10 +31,11 @@ TNRS_core(
 \item{accuracy}{numeric.  If specified, only matches with a score greater than or equal to the supplied accuracy level will be returned.}
 
 \item{batches}{NULL or Numeric.  Optional number of batches to divide the request into for parallel processing. CUrrently isn't implemented}
-
-\item{...}{Additional parameters passed to internal functions}
 }
 \description{
 Internal function for handling accessing the API,data formatting, and errors
+}
+\note{
+For more information on current sources, use the function TNRS_sources()
 }
 \keyword{internal}

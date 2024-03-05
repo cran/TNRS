@@ -12,7 +12,7 @@
 
 <meta name="author" content="Brian Maitner" />
 
-<meta name="date" content="2023-06-12" />
+<meta name="date" content="2024-03-05" />
 
 <title>Taxonomic Names Resolution Service</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Taxonomic Names Resolution Service</h1>
 <h4 class="author">Brian Maitner</h4>
-<h4 class="date">2023-06-12</h4>
+<h4 class="date">2024-03-05</h4>
 
 
 
@@ -360,12 +360,12 @@ preferred name.</p>
 <h1>Using the TNRS</h1>
 <p>The TNRS takes as input either a vector of scientific names, or a
 data.frame containing two columns: row number and scientific name.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TNRS)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># First, we&#39;ll grab an example dataset containing two columns: row number and scientific name.</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>fulldata <span class="ot">&lt;-</span> tnrs_testfile</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(fulldata, <span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(TNRS)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co"># First, we&#39;ll grab an example dataset containing two columns: row number and scientific name.</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>fulldata <span class="ot">&lt;-</span> tnrs_testfile</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">head</span>(fulldata, <span class="at">n =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>##    ID
 ## 1   1
 ## 2   2
@@ -408,16 +408,16 @@ data.frame containing two columns: row number and scientific name.</p>
 ## 18                                                Pteridophyte Nephrolepis mollis Rosenst.
 ## 19                                                      Piperaceae Piper crassipeduncullum
 ## 20                                 Asteraceae Hieracium billyanum var. parvulum B. de Retz</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that there are a variety of formats represented here, sometimes including</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># scientific name only</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># genus only</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># family and genus</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># family, scientific name, and author</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">TNRS</span>(<span class="at">taxonomic_names =</span> fulldata)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the results</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(results, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Note that there are a variety of formats represented here, sometimes including</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># scientific name only</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co"># genus only</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># family and genus</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co"># family, scientific name, and author</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">TNRS</span>(<span class="at">taxonomic_names =</span> fulldata)</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co"># Inspect the results</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="fu">head</span>(results, <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##    ID                                                      Name_submitted
 ## 1   1                                                  Arecaceae Mauritia
 ## 2   2                                   Solanaceae Solanum bipatens Dunal
@@ -430,38 +430,38 @@ data.frame containing two columns: row number and scientific name.</p>
 ## 9   9                                                Piper arboreum Aubl.
 ## 10 10                     Poaceae Pseudochaetochloa australiensis Hitchc.
 ##    Overall_score Name_matched_id                     Name_matched Name_score
-## 1      1.0000000         2055786                         Mauritia  1.0000000
-## 2      1.0000000          511246                 Solanum bipatens  1.0000000
-## 3      0.9302800         1987123 Hypopterygium incrassatolimbatum  1.0000000
-## 4      0.5995738           55495         Diplothrix juniperifolia  0.5995738
-## 5      1.0000000           37339              Leopoldinia pulchra  1.0000000
-## 6      1.0000000          305636                Leandra schenckii  1.0000000
-## 7      1.0000000         1284252           Hydnocarpus macrocarpa  1.0000000
-## 8      0.6796591         1979460         Warnstorfia trichophylla  0.5995738
-## 9      1.0000000          363781                   Piper arboreum  1.0000000
-## 10     1.0000000          387804  Pseudochaetochloa australiensis  1.0000000
-##    Name_matched_rank              Author_submitted             Author_matched
-## 1              genus                                                         
-## 2            species                         Dunal                      Dunal
-## 3            species               Ma^sAAAll. Hal.                  Müll.Hal.
-## 4            species                                                         
-## 5            species                         Mart.                      Mart.
-## 6            species                                                         
-## 7            species                                                         
-## 8            species (Warnst. ) Tuom. &amp; T. J. Kop. (Warnst.) Tuom. &amp; T.J.Kop.
-## 9            species                         Aubl.                      Aubl.
-## 10           species                       Hitchc.                    Hitchc.
-##    Author_score           Canonical_author Name_matched_accepted_family
-## 1            NA                       L.f.                    Arecaceae
-## 2        1.0000                      Dunal                   Solanaceae
-## 3        0.6514                  Müll.Hal.             Hypopterygiaceae
-## 4            NA                        DC.                   Asteraceae
-## 5        1.0000                      Mart.                    Arecaceae
-## 6            NA                      Cogn.              Melastomataceae
-## 7            NA                      Warb.                  Achariaceae
-## 8        1.0000 (Warnst.) Tuom. &amp; T.J.Kop.              Calliergonaceae
-## 9        1.0000                      Aubl.                   Piperaceae
-## 10       1.0000                    Hitchc.                      Poaceae
+## 1      1.0000000         1408073                         Mauritia  1.0000000
+## 2      1.0000000         1725998                 Solanum bipatens  1.0000000
+## 3      0.9302800         1147521 Hypopterygium incrassatolimbatum  1.0000000
+## 4      0.5995738           82217         Diplothrix juniperifolia  0.5995738
+## 5      1.0000000          219935              Leopoldinia pulchra  1.0000000
+## 6      1.0000000         1065588                Leandra schenckii  1.0000000
+## 7      1.0000000          918035           Hydnocarpus macrocarpa  1.0000000
+## 8      0.6796591         1131553         Warnstorfia trichophylla  0.5995738
+## 9      1.0000000          473591                   Piper arboreum  1.0000000
+## 10     1.0000000          886582  Pseudochaetochloa australiensis  1.0000000
+##    Name_matched_rank              Author_submitted              Author_matched
+## 1              genus                                                          
+## 2            species                         Dunal                       Dunal
+## 3            species               Ma^sAAAll. Hal.                  Müll. Hal.
+## 4            species                                                          
+## 5            species                         Mart.                       Mart.
+## 6            species                                                          
+## 7            species                                                          
+## 8            species (Warnst. ) Tuom. &amp; T. J. Kop. (Warnst.) Tuom. &amp; T.J. Kop.
+## 9            species                         Aubl.                       Aubl.
+## 10           species                       Hitchc.                     Hitchc.
+##    Author_score            Canonical_author Name_matched_accepted_family
+## 1            NA                        L.f.                    Arecaceae
+## 2        1.0000                       Dunal                   Solanaceae
+## 3        0.6514                  Müll. Hal.             Hypopterygiaceae
+## 4            NA                         DC.                   Asteraceae
+## 5        1.0000                       Mart.                    Arecaceae
+## 6            NA                       Cogn.              Melastomataceae
+## 7            NA               (Bedd.) Warb.                  Achariaceae
+## 8        1.0000 (Warnst.) Tuom. &amp; T.J. Kop.              Calliergonaceae
+## 9        1.0000                       Aubl.                   Piperaceae
+## 10       1.0000                     Hitchc.                      Poaceae
 ##      Genus_submitted     Genus_matched Genus_score Specific_epithet_submitted
 ## 1           Mauritia          Mauritia           1                           
 ## 2            Solanum           Solanum           1                   bipatens
@@ -528,62 +528,84 @@ data.frame containing two columns: row number and scientific name.</p>
 ## 8                             NA                Campyliaceae
 ## 9                             NA                            
 ## 10                            NA                            
-##                                        Name_matched_url Name_matched_lsid
-## 1            https://wcvp.science.kew.org/taxon/31356-1                  
-## 2           https://wcvp.science.kew.org/taxon/818455-1                  
-## 3  http://www.worldfloraonline.org/taxon/wfo-0001162747                  
-## 4           https://wcvp.science.kew.org/taxon/201833-1                  
-## 5           https://wcvp.science.kew.org/taxon/667794-1                  
-## 6  http://www.worldfloraonline.org/taxon/wfo-0001079398                  
-## 7  http://www.worldfloraonline.org/taxon/wfo-0000926452                  
-## 8  http://www.worldfloraonline.org/taxon/wfo-0001146720                  
-## 9           https://wcvp.science.kew.org/taxon/680435-1                  
-## 10          https://wcvp.science.kew.org/taxon/418837-1                  
-##    Phonetic Taxonomic_status            Accepted_name         Accepted_species
-## 1         Y         Accepted                 Mauritia                         
-## 2         Y          Synonym      Solanum cordifolium      Solanum cordifolium
-## 3         Y          Synonym  Hypopterygium tamarisci  Hypopterygium tamarisci
-## 4         Y          Synonym     Zinnia juniperifolia     Zinnia juniperifolia
-## 5         Y         Accepted      Leopoldinia pulchra      Leopoldinia pulchra
-## 6         Y          Synonym        Leandra regnellii        Leandra regnellii
-## 7         Y       No opinion                                                  
-## 8         Y         Accepted Warnstorfia trichophylla Warnstorfia trichophylla
-## 9         Y         Accepted           Piper arboreum           Piper arboreum
-## 10        Y          Synonym      Cenchrus arnhemicus      Cenchrus arnhemicus
-##          Accepted_name_author Accepted_name_id Accepted_name_rank
-## 1                        L.f.          2055786              genus
-## 2                       Dunal           511341            species
-## 3    (Sw.) Brid. ex Müll.Hal.          1987155            species
-## 4                      A.Gray          2149182            species
-## 5                       Mart.            37339            species
-## 6              (Triana) Cogn.           305626            species
-## 7                                                                
-## 8  (Warnst.) Tuom. &amp; T.J.Kop.          1979460            species
-## 9                       Aubl.           363781            species
-## 10         (F.Muell.) Morrone          1874178            species
-##                                       Accepted_name_url Accepted_name_lsid
-## 1            https://wcvp.science.kew.org/taxon/31356-1                   
-## 2           https://wcvp.science.kew.org/taxon/818796-1                   
-## 3  http://www.worldfloraonline.org/taxon/wfo-0001162816                   
-## 4           https://wcvp.science.kew.org/taxon/261346-1                   
-## 5           https://wcvp.science.kew.org/taxon/667794-1                   
-## 6  http://www.worldfloraonline.org/taxon/wfo-0001079388                   
-## 7                                                                         
-## 8  http://www.worldfloraonline.org/taxon/wfo-0001146720                   
-## 9           https://wcvp.science.kew.org/taxon/680435-1                   
-## 10        https://wcvp.science.kew.org/taxon/77105982-1                   
-##     Accepted_family Overall_score_order Highertaxa_score_order Source Warnings
-## 1         Arecaceae                   1                      1   wcvp        0
-## 2        Solanaceae                   1                      1   wcvp        0
-## 3  Hypopterygiaceae                   1                      1    wfo        0
-## 4        Asteraceae                   1                      1   wcvp        0
-## 5         Arecaceae                   1                      1   wcvp        0
-## 6   Melastomataceae                   1                      1    wfo        0
-## 7                                     1                      1    wfo        0
-## 8   Calliergonaceae                   1                      1    wfo        0
-## 9        Piperaceae                   1                      1   wcvp        0
-## 10          Poaceae                   1                      1   wcvp        0</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The output includes information on the name submitted, the match score (how close the match is), the name matched, the status of the matched name, and the accepted name.</span></span></code></pre></div>
+##                                                       Name_matched_url
+## 1   https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:31356-1
+## 2  https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:818455-1
+## 3                https://www.worldfloraonline.org/taxon/wfo-0001162747
+## 4  https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:201833-1
+## 5  https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:667794-1
+## 6  https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:136759-2
+## 7                https://www.worldfloraonline.org/taxon/wfo-0000926452
+## 8                https://www.worldfloraonline.org/taxon/wfo-0001146720
+## 9  https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:680435-1
+## 10 https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:418837-1
+##    Name_matched_lsid Phonetic Taxonomic_status              Accepted_name
+## 1                           Y         Accepted                   Mauritia
+## 2                           Y          Synonym        Solanum cordifolium
+## 3                           Y          Synonym    Hypopterygium tamarisci
+## 4                           Y          Synonym       Zinnia juniperifolia
+## 5                           Y         Accepted        Leopoldinia pulchra
+## 6                           Y          Synonym      Miconia alterninervia
+## 7                           Y         Accepted     Hydnocarpus macrocarpa
+## 8                           Y          Synonym Sarmentypnum trichophyllum
+## 9                           Y         Accepted             Piper arboreum
+## 10                          Y          Synonym        Cenchrus arnhemicus
+##              Accepted_species      Accepted_name_author Accepted_name_id
+## 1                                                  L.f.          1408073
+## 2         Solanum cordifolium                     Dunal          1015964
+## 3     Hypopterygium tamarisci (Sw.) Brid. ex Müll. Hal.          1147590
+## 4        Zinnia juniperifolia                    A.Gray            90034
+## 5         Leopoldinia pulchra                     Mart.           219935
+## 6       Miconia alterninervia        (Cogn.) R.Goldenb.          1434412
+## 7      Hydnocarpus macrocarpa             (Bedd.) Warb.           918035
+## 8  Sarmentypnum trichophyllum         (Warnst.) Hedenäs          1198425
+## 9              Piper arboreum                     Aubl.           473591
+## 10        Cenchrus arnhemicus        (F.Muell.) Morrone           908972
+##    Accepted_name_rank
+## 1               genus
+## 2             species
+## 3             species
+## 4             species
+## 5             species
+## 6             species
+## 7             species
+## 8             species
+## 9             species
+## 10            species
+##                                                        Accepted_name_url
+## 1     https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:31356-1
+## 2    https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:818796-1
+## 3                  https://www.worldfloraonline.org/taxon/wfo-0001162816
+## 4    https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:261346-1
+## 5    https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:667794-1
+## 6  https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:77207378-1
+## 7                  https://www.worldfloraonline.org/taxon/wfo-0000926452
+## 8                  https://www.worldfloraonline.org/taxon/wfo-0001213924
+## 9    https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:680435-1
+## 10 https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:77105982-1
+##    Accepted_name_lsid  Accepted_family Overall_score_order
+## 1                            Arecaceae                   1
+## 2                           Solanaceae                   1
+## 3                     Hypopterygiaceae                   1
+## 4                           Asteraceae                   1
+## 5                            Arecaceae                   1
+## 6                      Melastomataceae                   1
+## 7                          Achariaceae                   1
+## 8                      Calliergonaceae                   1
+## 9                           Piperaceae                   1
+## 10                             Poaceae                   1
+##    Highertaxa_score_order Source Warnings  WarningsEng
+## 1                       1   wcvp        0             
+## 2                       1   wcvp        0             
+## 3                       1    wfo        0             
+## 4                       2   wcvp        4 [HigherTaxa]
+## 5                       1   wcvp        0             
+## 6                       1   wcvp        0             
+## 7                       1    wfo        0             
+## 8                       2    wfo        4 [HigherTaxa]
+## 9                       1   wcvp        0             
+## 10                      1   wcvp        0</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># The output includes information on the name submitted, the match score (how close the match is), the name matched, the status of the matched name, and the accepted name.</span></span></code></pre></div>
 </div>
 <div id="tnrs-metadata" class="section level1">
 <h1>TNRS metadata</h1>
@@ -603,49 +625,47 @@ argument.<br />
 <li>Information about TNRS data sources</li>
 <li>TNRS version information</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">TNRS_metadata</span>()</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># If you want to see the TNRS version information (e.g. to report in an manuscript):</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>metadata<span class="sc">$</span>version</span></code></pre></div>
-<pre><code>##   db_version build_date code_version api_version
-## 1        4.2 2021-08-02        5.0.3</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To see the sources that are used by the TNRS:</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>metadata<span class="sc">$</span>sources</span></code></pre></div>
-<pre><code>##   sourceID sourceName                               sourceNameFull
-## 1        1   tropicos Missouri Botanical Gardens Tropicos database
-## 2        2        wfo                           World Flora Online
-## 3        3       wcvp           World Checklist of Vascular Plants
-## 4        4       usda                                  USDA Plants
-##                               sourceUrl
-## 1             https://www.tropicos.org/
-## 2      http://www.worldfloraonline.org/
-## 3         https://wcvp.science.kew.org/
-## 4 https://plants.sc.egov.usda.gov/java/
-##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   description
-## 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              The Missouri Botanical Garden&#39;s Tropicos database links over 1.33M scientific names with over 4.87M specimens and over 685K digital images. The data includes over 150K references from over 52.6K publications offered as a free service to the world&#39;s scientific community.
-## 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        The World Flora Online will be an open-access, Web-based compendium of the worlds plant species. It will be a collaborative, international project, building upon existing knowledge and published floras, checklists and revisions but will also require the collection and generation of new information on poorly know plant groups and plants in unexplored regions. WFO replaces The Plant List
-## 3 The World Checklist of Vascular Plants aims to deliver a sustainable and curated resource. It is based on Kew’s names and taxonomic backbone which has been created by reconciling the names from the International Plant Names Index (IPNI) with the taxonomy from the World Checklist of Selected Plant Families (WCSP). This Beta version therefore only displays names that are in both IPNI and WCVP. It contains both families that have been completed and peer reviewed by both external and internal experts on the relevant families as well as families that are in the process of being edited and reviewed. Some of the original data which WCSP built upon came from our generous collaborators listed in the acknowledgements. WCVP aims to represent a global consensus view of current plant taxonomy by reflecting the latest published taxonomies while incorporating the opinions of taxonomists based around the world
-## 4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                The PLANTS Database provides standardized information about the vascular plants, mosses, liverworts, hornworts, and lichens of the U.S. and its territories.
-##                                                           dataUrl
-## 1                                   http://services.tropicos.org/
-## 2 http://104.198.143.165/files/WFO_Backbone/_WFOCompleteBackbone/
-## 3                 http://sftp.kew.org/pub/data-repositories/WCVP/
-## 4                          http://plants.usda.gov/adv_search.html
-##                                                                          logo_path
-## 1     https://bien.nceas.ucsb.edu/bien/wp-content/uploads/2020/10/TropicosLogo.gif
-## 2        https://bien.nceas.ucsb.edu/bien/wp-content/uploads/2021/07/wfo_logo.jpeg
-## 3         https://bien.nceas.ucsb.edu/bien/wp-content/uploads/2021/07/kew_logo.png
-## 4 https://bien.nceas.ucsb.edu/bien/wp-content/uploads/2020/10/usda-plants-logo.gif
-##     version sourceReleaseDate tnrsDateAccessed
-## 1      &lt;NA&gt;              &lt;NA&gt;       2021-07-17
-## 2 v.2019.05        2019-05-17       2021-07-07
-## 3        v5        2021-06-01       2021-07-12
-## 4      &lt;NA&gt;              &lt;NA&gt;       2020-04-25</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To get the citation information to paste into a reference manager (e.g. paperpile, zotero):</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># writeLines(text = metadata$citations$citation)</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">TNRS_metadata</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co"># If you want to see the TNRS version information (e.g. to report in an manuscript):</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>metadata<span class="sc">$</span>version</span></code></pre></div>
+<pre><code>##   app_version db_version build_date code_version api_version
+## 1         5.2        4.4 2024-01-17          5.1         5.1</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># To see the sources that are used by the TNRS:</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>metadata<span class="sc">$</span>sources</span></code></pre></div>
+<pre><code>##   sourceID sourceName                           sourceNameFull
+## 1        1        wfo                       World Flora Online
+## 2        2       wcvp       World Checklist of Vascular Plants
+## 3        3       cact Cactaceae checklist (caryophyllales.org)
+##                                        sourceUrl geographic_scope
+## 1               http://www.worldfloraonline.org/           global
+## 2                  https://wcvp.science.kew.org/           global
+## 3 https://caryophyllales.org/cactaceae/Checklist           global
+##   taxonomic_scope   scope
+## 1     Embryophyta  global
+## 2    Tracheophyta  global
+## 3       Cactaceae limited
+##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            description
+## 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 The World Flora Online will be an open-access, Web-based compendium of the worlds plant species. It will be a collaborative, international project, building upon existing knowledge and published floras, checklists and revisions but will also require the collection and generation of new information on poorly know plant groups and plants in unexplored regions. WFO replaces The Plant List
+## 2  The World Checklist of Vascular Plants is based on Kew names and taxonomic backbone which has been created by reconciling the names from the International Plant Names Index (IPNI) with the taxonomy from the World Checklist of Selected Plant Families (WCSP). This Beta version therefore only displays names that are in both IPNI and WCVP. It contains both families that have been completed and peer reviewed by both external and internal experts on the relevant families as well as families that are in the process of being edited and reviewed. Some of the original data which WCSP built upon came from our generous collaborators listed in the acknowledgements. WCVP aims to represent a global consensus view of current plant taxonomy by reflecting the latest published taxonomies while incorporating the opinions of taxonomists based around the world.
+## 3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Cactaceae at Caryophyllales.org – a dynamic online species-level taxonomic backbone for the family.
+##                                                                       dataUrl
+## 1 https://files.worldfloraonline.org/files/WFO_Backbone/_WFOCompleteBackbone/
+## 2                     http://sftp.kew.org/pub/data-repositories/WCVP/wcvp.zip
+## 3                                                                [by request]
+##                                                                   logo_path
+## 1 https://bien.nceas.ucsb.edu/bien/wp-content/uploads/2021/07/wfo_logo.jpeg
+## 2  https://bien.nceas.ucsb.edu/bien/wp-content/uploads/2021/07/kew_logo.png
+## 3 https://bien.nceas.ucsb.edu/bien/wp-content/uploads/2024/02/cact_logo.png
+##   isDefault   version sourceReleaseDate tnrsDateAccessed
+## 1         1 v.2023.06        2023-06-01       2024-01-10
+## 2         0        12        2023-09-28       2024-01-08
+## 3         0      &lt;NA&gt;              &lt;NA&gt;       2023-11-02</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># To get the citation information to paste into a reference manager (e.g. paperpile, zotero):</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co"># writeLines(text = metadata$citations$citation)</span></span></code></pre></div>
 </div>
 
 
